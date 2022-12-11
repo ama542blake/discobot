@@ -4,7 +4,7 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
 
 # sets the SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET variables, which are
-# automatically ready when calling SpotifyClientCredentials()
+# automatically read when calling SpotifyClientCredentials()
 load_dotenv()
 
 lz_uri = 'spotify:artist:36QJpDe2go2KgaRleHCDTp'
