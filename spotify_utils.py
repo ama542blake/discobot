@@ -4,6 +4,9 @@ SPOTIFY_BASE_URL = "https://open.spotify.com/"
 # TODO:
 valid_spotify_link = re.compile(r'https://[open.]?spotify.com/[track|song|playlist/artist]/')
 
+SCOPE_MODIFY_PRIVATE_PLAYLIST = 'playlist-modify-private'
+SCOPE_MODIFY_PUBLIC_PLAYLIST = 'playlist-modify-public'
+
 uri_split_re = re.compile(r'/|[?]')
 def get_spotify_resource(url: str) -> tuple[str, str]:
     """

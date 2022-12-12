@@ -4,7 +4,7 @@ import discord
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from dotenv import load_dotenv
-from spotify_utils import SPOTIFY_BASE_URL, resource_is_song
+from spotify_utils import SCOPE_MODIFY_PRIVATE_PLAYLIST, SCOPE_MODIFY_PUBLIC_PLAYLIST, SPOTIFY_BASE_URL, resource_is_song
 
 load_dotenv()
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
@@ -15,7 +15,8 @@ intents.message_content = True
 discord_client = discord.Client(intents=intents)
 
 # SpotifyClientCredentials() automatically reads the SPOTIPY_CLIENT_ID and SPOTIPY_CLIENT_SECRET environment variables
-spotify_client = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
+auth_manager = spotipy.SpotifyOAuth(scope=[SCOPE_MODIFY_PUBLIC_PLAYLIST, SCOPE_MODIFY_PRIVATE_PLAYLIST], open_browser=True)
+spotify_client = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials(), auth_manager=auth_manager)
 print(spotify_client.current_user())
 
 TEST_PLAYLIST_URL = os.getenv("TEST_PLAYLIST_URL")
