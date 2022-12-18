@@ -4,3 +4,5 @@ venv
 .DS_store
 .cache
 *.pyc
+frontend/node_modules
+frontend/public

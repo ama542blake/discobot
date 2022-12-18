@@ -6,3 +6,7 @@ Currently, Spotify is the only platform supported. This means that you can only 
 
 ## How Do I Set Up Discobot?
 That's a good question. This is still very much up in the air.
+
+## Development notes
+**Build:** `npm run build`
+**Run:** `http-server`
