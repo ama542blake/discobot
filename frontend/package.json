@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon",
     "lint": "eslint . --ext .ts",
-    "build": "rimraf ./public && tsc && ./copy-public.zsh",
+    "build": "rimraf ./public && tsc && ./build-public.zsh",
     "start": "npm run build && node build/index.js"
   },
   "author": "Blake Feucht",
